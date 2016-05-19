@@ -1,0 +1,17 @@
+﻿{
+    "RootReferencePathMode": "SettingsFileDirectory",
+    "Framework": "jasmine",
+    "References": [
+        { "Path": "../../../Scripts/q.js" },
+        { "Path": "../../../src/javascript/carService.js" },
+        { "Path": "../../../src/javascript/engineCalculations.js" }
+    ],
+    "Tests": [
+        { "Path": "engineCalculationsSpec.js" },
+        { "Path": "jasmineAsyncSpecSpec.js" },
+        { "Path": "jasmineBasicSpec.js" },
+        { "Path": "jasmineMatchersSpec.js" },
+        { "Path": "jasmineSpiesSpec.js" }
+    ],
+    "EnableTracing": true
+}

@@ -1,0 +1,27 @@
+﻿{
+    "RootReferencePathMode": "SettingsFileDirectory",
+    "Framework": "jasmine",
+    "Compile": {
+        "Mode": "External",
+        "Extensions": [ ".ts" ],
+        "ExtensionsWithNoOutput": [ ".d.ts" ],
+        "Paths": [
+            {
+                "SourcePath": "../../../",
+                "OutputPath": "../../../"
+            }
+        ]
+    },
+    "References": [
+        {
+            "Path": "../../../src/typescript",
+            "Includes": [ "*.ts" ],
+            "Excludes": [ "*.d.ts" ]
+        }
+    ],
+    "Tests": [
+        { "Path": "engineCalculationsSpec.ts" },
+        { "Path": "simpleSpec.ts" }
+    ],
+    "EnableTracing": true
+}
