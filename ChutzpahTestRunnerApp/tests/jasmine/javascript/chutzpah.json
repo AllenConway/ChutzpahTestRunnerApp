@@ -13,5 +13,6 @@
         { "Path": "jasmineMatchersSpec.js" },
         { "Path": "jasmineSpiesSpec.js" }
     ],
-    "EnableTracing": true
+    "EnableTracing": true,
+    "TraceFilePath": "chutzpahlog.txt"
 }

@@ -23,5 +23,6 @@
         { "Path": "engineCalculationsSpec.ts" },
         { "Path": "simpleSpec.ts" }
     ],
-    "EnableTracing": true
+    "EnableTracing": true,
+    "TraceFilePath": "chutzpahlog.txt"
 }

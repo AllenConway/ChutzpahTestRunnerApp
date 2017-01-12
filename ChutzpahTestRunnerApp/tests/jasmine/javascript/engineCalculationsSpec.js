@@ -4,13 +4,9 @@
 
 describe("Engine Calculations", function () {
 
-   //it("should be easy and return 2", function () {
-   //   var result = EngineCalculations();
-   //   expect(result).toBe(2);
-   //});
-
    it("should calculate Horsepower metrics", function () {
 
+      //Arrange
       var service = CarService;
       var engineCalc = new EngineCalculations(service);
       engineCalc.calculations = {
@@ -18,8 +14,11 @@ describe("Engine Calculations", function () {
          et: 13.7
       }
 
+      //Act
       var hpCalcs = engineCalc.engineHorsepower(engineCalc.calculations);
 
+
+      //Assert
       expect(hpCalcs.flywheelHorsepower).toBe(320);
       expect(hpCalcs.rearWheelHorsepower).toBe(279);
    });

@@ -45,15 +45,22 @@ var CarService = (function() {
 
    my.getCarsAsync = function() {
 
-      var result  = Q.defer();
+      //Note: Promise is not supported by PhantomJS so this test will fail
+      return new Promise(function (resolve) {
+         ////Some longer running API call...
+         setTimeout(resolve(true), 2500);
+      });
 
-      //Some longer running API call...
-      setTimeout(function () {
-         result.resolve(true);
+      //Using Q for Promises as an alternate method
+      //var result  = Q.defer();
 
-      }, 2500);
+      ////Some longer running API call...
+      //setTimeout(function () {
+      //   result.resolve(true);
+
+      //}, 2500);
       
-      return result.promise;
+      //return result.promise;
    }
 
    return my;

@@ -86,18 +86,23 @@ describe("engine calculations when using jasmine spies", function () {
 
    });
 
-   it("should call carService using createSpy and spyOn", function () {
+   it("should return mock data from spied service using createSpy", function () {
 
       //Arrange
+      var getCarsMock = [
+         { year: 2016, make: "Test", model: "Car", rearWheelHorsepower: 0, flywheelHorsepower: 0, weight: 1000, et: 10 }
+      ];
       var carService = { getCars: jasmine.createSpy() };
-      var carSrvSpy = spyOn(CarService, "getCars").and.returnValue(carService);
+      carService.getCars.and.returnValue(getCarsMock);      
       var engineCalc = new EngineCalculations(carService);
-
+      
       //Act
       var result = engineCalc.calculateCarData();
+      var cars = carService.getCars();
 
       //Assert
       expect(carService.getCars).toHaveBeenCalled();
+      expect(cars[0].year).toEqual(2016);
 
    });
 

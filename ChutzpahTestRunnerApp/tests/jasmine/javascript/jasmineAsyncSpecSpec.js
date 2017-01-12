@@ -2,7 +2,45 @@
 /// <reference path="../../../src/javascript/engineCalculations.js" />
 /// <reference path="../src/jasmine.js" />
 
-xdescribe("Async calls using jasmine done callback via a promise", function () {
+xdescribe("Async calls using the jasmine done callback", function () {
+
+   var result = false;
+   beforeEach(function (done) {
+      Q.delay(2500).then(function () {
+         result = true;
+         done();
+      });
+   });
+
+   it("should wait until the done callback is called and return the result of the fulfilled promise", function (done) {
+      expect(result).toEqual(true);
+      done();
+   });
+});
+
+describe("Async calls using the jasmine clock and tick functions", function () {
+
+   beforeEach(function () {
+      jasmine.clock().install();
+   });
+
+   afterEach(function () {
+      jasmine.clock().uninstall();
+   });
+
+   it("should tick the clock forward and return the result of the fulfilled promise", function () {
+      let result = false;
+      Q.delay(10000).then(function () {
+         result = true;
+      });
+
+      jasmine.clock().tick(10010);
+      expect(result).toEqual(true);
+   });
+});
+
+
+describe("Async calls using jasmine done callback via an async service call", function () {
    var flag = false;
 
    beforeEach(function (done) {
@@ -16,27 +54,13 @@ xdescribe("Async calls using jasmine done callback via a promise", function () {
       });
    });
 
-   it("should be true once the promise is fulfilled", function () {      
+   it("should be true once the service call promise is fulfilled", function () {      
       expect(flag).toEqual(true);
    });
 
-});
-
-describe("Async calls using the jasmine clock and tick functions", function () {
-   beforeEach(function () {
-      jasmine.clock().install();
-   });
-   
-   afterEach(function () {
-      jasmine.clock().uninstall();
+   afterEach(function() {
+      flag = false;
    });
 
-   it("should tick the clock forward and return the result of the fulfilled promise", function () {
-      var result = false;
-      Q.delay(10000).then(function () {
-         result = true;
-      });
-      jasmine.clock().tick(10010);
-      expect(result).toEqual(true);
-   });
 });
+
