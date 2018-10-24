@@ -4,8 +4,8 @@
 describe("Simple Calculations", () => {
 
     it("should return true", () => {
-        var simpl = new Simple();
-        expect(simpl.easyTest()).toBe(5);
+        var simple: Simple = new Simple();
+        expect(simple.easyTest()).toBe(5);
     });
 
 });

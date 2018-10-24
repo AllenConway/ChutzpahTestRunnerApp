@@ -25,7 +25,8 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TypeScriptToolsVersion>2.0</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.1</TypeScriptToolsVersion>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -89,6 +90,7 @@
     <Content Include="tests\jasmine\javascript\jasmineMatchersSpec.js" />
     <Content Include="tests\jasmine\javascript\jasmineSpiesSpec.js" />
     <Content Include="tests\jasmine\javascript\JSSpecRunner.html" />
+    <Content Include="tests\jasmine\javascript\test.spec.js" />
     <Content Include="tests\jasmine\src\boot.js" />
     <Content Include="tests\jasmine\src\console.js" />
     <Content Include="tests\jasmine\src\jasmine-html.js" />

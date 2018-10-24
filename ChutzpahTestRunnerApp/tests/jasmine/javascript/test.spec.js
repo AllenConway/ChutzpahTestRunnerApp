@@ -1,4 +1,4 @@
-/// <reference path="../src/jasmine.js" />
+﻿/// <reference path="../src/jasmine.js" />
 describe("basic jasmine unit tests", function () {
     it("should be true", function () {
         expect(true).toBe(true);
@@ -24,4 +24,3 @@ describe("basic jasmine unit tests", function () {
         });
     });
 });
-//# sourceMappingURL=jasmineBasicSpec.js.map
